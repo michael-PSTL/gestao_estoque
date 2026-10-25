@@ -1,0 +1,8 @@
+.recentes { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 1rem; }
+.recente { border: 1px solid var(--line); border-left: 4px solid var(--signal); border-radius: var(--radius); padding: .9rem 1rem; display: grid; gap: .4rem; background: var(--surface); }
+.recente__topo { display: flex; justify-content: space-between; align-items: start; gap: .5rem; }
+.recente__nome { font: 600 1rem var(--font-head); color: var(--ink); overflow-wrap: anywhere; }
+.recente__calculo { font-variant-numeric: tabular-nums; }
+.recente__total { font-weight: 600; }
+.recente__data { font-size: .85rem; color: var(--muted); }
+.recentes-vazio { grid-column: 1 / -1; }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ganhos e gastos | ControleDeEstoque</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/financeiro.css">
+</head>
+<body data-page="financeiro">
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <div class="app">
+    <aside id="sidebar" class="sidebar"></aside>
+    <main id="conteudo" class="main" tabindex="-1">
+      <header class="page-header">
+        <h1>Ganhos e gastos</h1>
+        <p>Acompanhe quanto do saldo já foi usado pelos itens do estoque. O saldo mensal é somado de novo todo mês.</p>
+      </header>
+
+      <div id="estado" aria-live="polite"></div>
+      <div id="painel" hidden>
+        <div id="alerta" aria-live="polite"></div>
+
+        <p id="renovacao" class="muted renovacao"></p>
+
+        <div class="kpis">
+          <article class="kpi"><h3>Ganhos (total creditado)</h3><p class="kpi__valor" id="kpi-saldo">R$ 0,00</p></article>
+          <article class="kpi"><h3>Gastos</h3><p class="kpi__valor" id="kpi-gasto">R$ 0,00</p></article>
+          <article class="kpi" id="kpi-restante-box"><h3>Saldo restante</h3><p class="kpi__valor" id="kpi-restante">R$ 0,00</p></article>
+        </div>
+
+        <section class="card" aria-labelledby="t-regua">
+          <h2 id="t-regua">Saldo utilizado</h2>
+          <div class="meter" id="meter" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-labelledby="t-regua">
+            <div class="meter__ok" id="meter-ok"></div>
+            <div class="meter__over" id="meter-over"></div>
+            <div class="meter__limite" id="meter-limite" title="Limite do saldo creditado"></div>
+          </div>
+          <p class="meter__legenda"><span id="meter-texto"></span><span class="muted">A marca amarela indica o limite do saldo</span></p>
+        </section>
+
+        <section class="card" aria-labelledby="t-cats">
+          <h2 id="t-cats">Gastos por categoria</h2>
+          <ul id="lista-categorias" class="cats"></ul>
+        </section>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="js/financeiro.js"></script>
+</body>
+</html>
